@@ -1,4 +1,4 @@
-const CartWidget = () => {
+const CartWidget = (carritoLenght) => {
     return (
         <div>
             <button><i class="icon-shopping-cart icon-2x"></i></button>

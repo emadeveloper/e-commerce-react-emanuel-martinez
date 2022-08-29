@@ -1,14 +1,14 @@
 import CartWidget from "../cartwidget/cartwidget";
 
-const Navbar = () => {
+const Navbar = ({carritoLength}) => {
     return (
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Galeria</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Logo</a></li>
+                <li>Home</li>
+                <li>Samsung</li>
+                <li>Iphone</li>
+                <li>Xioami</li>
+                <li>LG</li>
             <CartWidget />
             </ul>
         </nav>
@@ -17,3 +17,4 @@ const Navbar = () => {
 
 
 export default Navbar;
+
