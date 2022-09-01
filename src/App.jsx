@@ -9,20 +9,46 @@ const App = () => {
   const [carrito, setCarrito] = useState([])
   const [productos, setProductos] = useState([])
   
-  useEffect(() => {
-    //Componente que ya se creo // 
-    fetch('https://api.mercadolibre.com/sites/MLA/search?q=Samsung#json')
-    .then(response => response.json())
-    .then(data => {
+  const searchProducts = async () => {
+    try{
+      const response = await fetch('https://api.mercadolibre.com/sites/MLA/search?q=celulares')
+      const data = await response.json();
       setProductos(data.results);
-    })
+    }catch(e){
+      //console.log(e);
+    }
+  }
+
+  useEffect(() => {
+    searchProducts()
   }, [])
 
   return (
     <div className="App">
       <Navbar carritoLength={carrito.length}/>
-      <h2>Los mejores celulares encontralos aca!</h2>
+      
       <ItemListContainer items="Catalogo de celulares de nuestra tienda online" color="blue" />
+      <h2>Los mejores celulares encontralos aca!</h2>
+      {productos.map((producto, index)=> {
+          if (producto === 0) {
+            return <b>El producto no se encuentra en stock</b>
+          }
+          
+          return(
+            <div key={index}>
+              <h3>{producto.title}</h3>
+              <img src={producto.thumbnail} alt="" />
+              <div>
+                <p>$ {producto.price}</p>
+                <button onClick={()=>{
+                  setCarrito([...carrito, producto]);
+                }}>
+                  Agregar al carrito
+                </button>
+              </div>
+            </div>
+          )
+      })}
     </div>
   );
 };

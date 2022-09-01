@@ -1,7 +1,7 @@
 const CartWidget = (carritoLenght) => {
     return (
         <div>
-            <button><i class="icon-shopping-cart icon-2x"></i></button>
+            <i className="icon-shopping-cart icon-2x"></i>
         </div>
         
     )

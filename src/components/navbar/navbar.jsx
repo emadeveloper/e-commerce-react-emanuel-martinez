@@ -1,6 +1,6 @@
 import CartWidget from "../cartwidget/cartwidget";
 
-const Navbar = ({carritoLength}) => {
+const Navbar = ({}) => {
     return (
         <nav>
             <ul>
