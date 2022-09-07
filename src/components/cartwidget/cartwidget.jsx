@@ -1,9 +1,8 @@
-const CartWidget = (carritoLenght) => {
+import React from "react";
+
+const CartWidget = () => {
     return (
-        <div>
-            <i className="icon-shopping-cart icon-2x"></i>
-        </div>
-        
+            <i className="bi bi-cart3"></i>
     )
 };
 

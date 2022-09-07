@@ -1,4 +1,6 @@
 import CartWidget from "../cartwidget/cartwidget";
+import React from "react";
+
 
 const Navbar = ({}) => {
     return (
@@ -12,8 +14,8 @@ const Navbar = ({}) => {
             <CartWidget />
             </ul>
         </nav>
-    )
-};
+    );
+}
 
 
 export default Navbar;

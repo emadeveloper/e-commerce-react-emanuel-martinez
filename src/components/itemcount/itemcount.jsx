@@ -23,7 +23,7 @@ export const ItemCount = ({initial, stock, onAdd}) => {
                 <button disabled={stock <= 0} onClick={() => onAdd(count)}>Agregar al carrito</button>
             </div>
         </div>
-    )
-};
+    );
+}
 
 export default ItemCount;
