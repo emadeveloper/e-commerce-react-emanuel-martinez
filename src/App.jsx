@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
     <Navbar />
-    <ItemListContainer texto='Tienda digital de celulares' />
-    {/* <ItemDetailContainer /> */}
+    {/* <ItemListContainer texto='Tienda digital de celulares' /> */}
+    <ItemDetailContainer />
     
     </>
   )

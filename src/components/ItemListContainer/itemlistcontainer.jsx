@@ -28,7 +28,7 @@ export const ItemListContainer = ({ texto }) => {
               const data = await response.json();
               setProductos(data.results);
             } catch (e) {
-              //console.log(e);
+              console.log(productos);
             }
           };
         
