@@ -2,22 +2,32 @@ import React, {useState, useEffect} from "react";
 import Title from "../title/Title";
 import ItemCount from "../itemcount/itemcount";
 import ItemList from "../itemlist/ItemList";
+import { useParams } from "react-router-dom";
 
 
 
 export const ItemListContainer = ({ texto }) => {
         const [data, setData] = useState ([]);
 
+        const {categoriaId} = useParams();
+
         useEffect(() => {
             const getData = new Promise (resolve => {
                 setTimeout(() => {
                     resolve(searchProducts);
-                }, 3000);
+                }, 1000);
             });
+            if 
+              (categoriaId) {
+                getData.then(res => setData(res.filter(celular => celular.category === categoriaId)));
+              } else {
+                getData.then(res => setData(res))
+              }
+
             getData.then(res => setData(res))
 
 
-        }, [])
+        }, [categoriaId])
 
         const [productos, setProductos] = useState([]);
         const searchProducts = async () => {

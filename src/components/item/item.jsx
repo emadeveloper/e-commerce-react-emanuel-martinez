@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({info}) => {
     return (
-        <a href="" className="Celular">
+        <Link to={`/detalle/${info.id}`} className="Celular">
             <img src={info.img} alt="Smartphone" />
             <p>{info.title}</p>
-        </a>
+        </Link>
     );
 }
 
